@@ -1,0 +1,13 @@
+import pygame
+
+def play_music(music_file):
+    pygame.init()
+    
+    pygame.mixer.music.load(music_file)
+    pygame.mixer.music.play(-1)
+    
+    while pygame.mixer.music.get_busy():
+        pass
+    
+music_file = ('song.mp3')
+play_music(music_file)
