@@ -1,0 +1,13 @@
+from pytube import YouTube
+from termcolor import colored
+
+print(colored('YOUTUBE', 'red'), end=" "), print("Video Downloader\n")
+
+URL = str(input(colored("PASTE YOUR URL HERE\n", 'cyan')))
+print(colored(F'\nDOWNLOADING {URL} ...', 'grey'))
+
+yt = YouTube(URL)
+video = yt.streams()
+
+video.download()
+print(colored('Downloaded Successfully', 'green'))
